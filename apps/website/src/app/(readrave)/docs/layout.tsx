@@ -1,5 +1,5 @@
-import { sidebarConfig } from './sidebar'
 import { ReadraveSidebar } from '@/components/readrave/sidebar'
+import { sidebarConfig } from './sidebar'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

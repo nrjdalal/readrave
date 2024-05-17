@@ -15,6 +15,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "test": "bash .husky/pre-commit",
+    "pretty": "prettier --write .",
     "prepare": "husky"
   },
   "packageManager": "pnpm@9.1.1",
