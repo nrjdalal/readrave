@@ -1,0 +1,30 @@
+{
+  "name": "readrave-turbo",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "nrjdalal",
+    "url": "https://nrjdalal.com"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "bash .husky/pre-commit",
+    "prepare": "husky"
+  },
+  "packageManager": "pnpm@9.1.1",
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "husky": "^9.0.11"
+  }
+}
