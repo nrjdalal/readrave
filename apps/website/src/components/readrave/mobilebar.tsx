@@ -19,7 +19,7 @@ export const ReadraveMobilebar = ({
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger className="md:hidden fixed top-20 bg-background text-foreground border p-2 px-4 rounded-md right-6 flex gap-x-2 items-center">
+      <SheetTrigger className="md:hidden fixed top-20 bg-background text-foreground border p-2 px-4 rounded-md right-5 flex gap-x-2 items-center">
         <svg
           strokeWidth="1.5"
           viewBox="0 0 24 24"
