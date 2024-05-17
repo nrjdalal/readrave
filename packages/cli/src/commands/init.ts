@@ -12,7 +12,6 @@ import {
 import { Command } from 'commander'
 import { detect } from 'detect-package-manager'
 import { execa } from 'execa'
-import ora from 'ora'
 import { z } from 'zod'
 
 const initOptionsSchema = z.object({

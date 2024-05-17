@@ -13,7 +13,7 @@ export const ReadraveSidebar = ({
   const pathname = usePathname()
 
   return (
-    <aside className="z-6 top-14 hidden h-[calc(100dvh-3.5rem)] md:sticky md:block">
+    <aside className="z-10 top-14 hidden h-[calc(100dvh-3.5rem)] md:sticky md:block">
       <ScrollArea className="h-full py-6">
         <nav className="flex flex-col space-y-2.5 text-sm text-foreground/50">
           {sidebarConfig.map((item, i) => (

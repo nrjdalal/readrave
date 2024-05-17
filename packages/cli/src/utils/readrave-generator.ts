@@ -18,6 +18,10 @@ export const readraveGenerator = async ({
     path.join(cwd, nextInfo.appDir, '..', 'components/readrave/sidebar.tsx'),
   )
 
+  const mobilebarComponent = existsSync(
+    path.join(cwd, nextInfo.appDir, '..', 'components/readrave/mobilebar.tsx'),
+  )
+
   if (!sidebarComponent) {
     await fsex.ensureFile(
       path.join(cwd, nextInfo.appDir, '..', 'components/readrave/sidebar.tsx'),
@@ -25,6 +29,27 @@ export const readraveGenerator = async ({
     await fs.writeFile(
       path.join(cwd, nextInfo.appDir, '..', 'components/readrave/sidebar.tsx'),
       templates.DEMO_SIDEBAR,
+      'utf8',
+    )
+  }
+
+  if (!mobilebarComponent) {
+    await fsex.ensureFile(
+      path.join(
+        cwd,
+        nextInfo.appDir,
+        '..',
+        'components/readrave/mobilebar.tsx',
+      ),
+    )
+    await fs.writeFile(
+      path.join(
+        cwd,
+        nextInfo.appDir,
+        '..',
+        'components/readrave/mobilebar.tsx',
+      ),
+      templates.DEMO_MOBILEBAR,
       'utf8',
     )
   }
