@@ -1,1 +1,5 @@
-bun test
+bun run build
+cd packages/cli && bun link && cd ../..
+rm -rf "test-app"
+bunx create-next-app "test-app" --ts --eslint --tailwind --src-dir --app --import-alias "@/*"
+readrave init --cwd "test-app"
