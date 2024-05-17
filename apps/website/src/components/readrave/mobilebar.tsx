@@ -1,14 +1,9 @@
+// version: 1.0
+
 'use client'
 
 import { ScrollArea } from '@/components/ui/scroll-area'
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -65,12 +60,19 @@ export const ReadraveMobilebar = ({
                   <Link
                     href={item.href}
                     className={cn(
-                      'font-foreground/50 hover:text-primary hover:underline',
-                      pathname === item.href && 'font-medium text-primary',
+                      'font-foreground/50 hover:text-primary hover:underline flex items-center gap-x-2',
+                      pathname === item.href && 'text-primary',
                     )}
                     style={item.css}
                     onClick={() => setOpen(false)}
                   >
+                    <span
+                      className={cn(
+                        'hidden',
+                        pathname === item.href &&
+                          'inline-block w-2 h-2 rounded-full bg-green-600',
+                      )}
+                    />
                     {item.title}
                   </Link>
                 ) : (
