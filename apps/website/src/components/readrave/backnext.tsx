@@ -27,7 +27,7 @@ export const ReadraveBacknext = ({
     <nav className="grid md:grid-cols-2 gap-4 mt-10 border-t py-10 flex-wrap">
       {previous ? (
         <Link
-          className="flex items-center gap-x-3 font-medium text-primary/75 hover:underline hover:text-primary justify-start border py-3 md:py-6 px-3 rounded-md"
+          className="flex items-center gap-x-3 font-medium text-primary/75 hover:underline hover:text-primary justify-start border py-3 md:py-6 px-3 rounded-md bg-background"
           href={previous.href}
         >
           <svg
@@ -51,7 +51,7 @@ export const ReadraveBacknext = ({
       )}
       {next ? (
         <Link
-          className="flex items-center gap-x-3 font-medium text-primary/75 hover:underline hover:text-primary justify-end border py-3 md:py-6 px-3 rounded-md"
+          className="flex items-center gap-x-3 font-medium text-primary/75 hover:underline hover:text-primary justify-end border py-3 md:py-6 px-3 rounded-md bg-background"
           href={next.href}
         >
           {next.title}

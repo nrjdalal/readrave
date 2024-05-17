@@ -1,10 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { cn } from '@/lib/utils'
-import {
-  JetBrains_Mono as FontMono,
-  DM_Sans as FontSans,
-} from 'next/font/google'
+import { JetBrains_Mono as FontMono, Inter as FontSans } from 'next/font/google'
 import Link from 'next/link'
 
 const fontMono = FontMono({
