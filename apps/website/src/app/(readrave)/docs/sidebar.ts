@@ -9,9 +9,5 @@ export const sidebarConfig = [
   {
     "title": "Installation",
     "href": "/docs/installation"
-  },
-  {
-    "title": "Configuration",
-    "href": "/docs/awesome-configuration/configuration"
   }
 ]
