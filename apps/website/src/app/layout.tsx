@@ -24,9 +24,7 @@ export default function RootLayout({
               readrave
             </Link>
             <div>
-              <Link href="/docs" className="mr-4">
-                Docs
-              </Link>
+              <Link href="/docs">Docs</Link>
             </div>
           </div>
         </nav>
