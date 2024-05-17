@@ -1,3 +1,6 @@
+// version: 1.0
+
+import { ReadraveBreadcrumb } from '@/components/readrave/breadcrumb'
 import { ReadraveMobilebar } from '@/components/readrave/mobilebar'
 import { ReadraveSidebar } from '@/components/readrave/sidebar'
 import { sidebarConfig } from './sidebar'
@@ -8,7 +11,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <ReadraveMobilebar sidebarConfig={sidebarConfig} />
       <ReadraveSidebar sidebarConfig={sidebarConfig} />
       <main className="pt-6">
-        <article className="prose max-w-none dark:prose-invert">
+        <ReadraveBreadcrumb sidebarConfig={sidebarConfig} />
+        <article className="prose max-w-none dark:prose-invert break-words">
           {children}
         </article>
       </main>
