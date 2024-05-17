@@ -19,7 +19,7 @@ export const ReadraveMobilebar = ({
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger className="md:hidden fixed top-20 bg-background text-foreground border p-2 px-4 rounded-md right-5 flex gap-x-2 items-center">
+      <SheetTrigger className="fixed right-5 top-20 flex items-center gap-x-2 rounded-md border bg-background p-2 px-4 text-foreground md:hidden">
         <svg
           strokeWidth="1.5"
           viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ export const ReadraveMobilebar = ({
         </svg>
         <span className="sr-only">Toggle Menu</span>
       </SheetTrigger>
-      <SheetContent className="md:hidden w-72">
+      <SheetContent className="w-72 md:hidden">
         <ScrollArea className="h-full">
           <nav className="flex flex-col space-y-2.5 text-sm text-foreground/50">
             {sidebarConfig.map((item, i) => (
@@ -70,14 +70,14 @@ export const ReadraveMobilebar = ({
                       className={cn(
                         'hidden',
                         pathname === item.href &&
-                          'inline-block w-2 h-2 rounded-full bg-green-600 mr-1.5 mb-px dark:bg-green-500',
+                          'mb-px mr-1.5 inline-block h-2 w-2 rounded-full bg-green-600 dark:bg-green-500',
                       )}
                     />
                     {item.title}
                   </Link>
                 ) : (
                   <p
-                    className="font-semibold text-foreground/75 select-none"
+                    className="select-none font-semibold text-foreground/75"
                     style={item.css}
                   >
                     {item.title}

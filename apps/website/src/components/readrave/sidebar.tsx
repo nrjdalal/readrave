@@ -15,7 +15,7 @@ export const ReadraveSidebar = ({
   const pathname = usePathname()
 
   return (
-    <aside className="z-10 top-14 hidden h-[calc(100dvh-3.5rem)] md:sticky md:block">
+    <aside className="top-14 z-10 hidden h-[calc(100dvh-3.5rem)] md:sticky md:block">
       <ScrollArea className="h-full py-6">
         <nav className="flex flex-col space-y-2.5 text-sm text-foreground/50">
           {sidebarConfig.map((item, i) => (
@@ -33,14 +33,14 @@ export const ReadraveSidebar = ({
                     className={cn(
                       'hidden',
                       pathname === item.href &&
-                        'inline-block w-2 h-2 rounded-full bg-green-600 mr-1.5 mb-px dark:bg-green-500',
+                        'mb-px mr-1.5 inline-block h-2 w-2 rounded-full bg-green-600 dark:bg-green-500',
                     )}
                   />
                   {item.title}
                 </Link>
               ) : (
                 <p
-                  className="font-semibold text-foreground/75 select-none"
+                  className="select-none font-semibold text-foreground/75"
                   style={item.css}
                 >
                   {item.title}

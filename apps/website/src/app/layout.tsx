@@ -28,14 +28,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-dvh bg-secondary font-sans antialiased',
+          'min-h-dvh bg-secondary/25 font-sans antialiased',
           fontMono.variable,
           fontSans.variable,
         )}
       >
-        <nav className="h-14 fixed top-0 z-50 bg-background border-b w-full">
-          <div className="mx-auto max-w-screen-xl px-5 flex justify-between items-center h-full lg:px-7">
-            <Link href="/" className="font-bold text-primary text-2xl">
+        <nav className="fixed top-0 z-50 h-14 w-full border-b bg-background">
+          <div className="mx-auto flex h-full max-w-screen-xl items-center justify-between px-5 lg:px-7">
+            <Link href="/" className="text-2xl font-bold text-primary">
               readrave
             </Link>
             <div className="flex items-center gap-8 text-primary">

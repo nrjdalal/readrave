@@ -14,7 +14,7 @@ export const ReadraveBreadcrumb = ({
   const paths = pathname.split('/').filter(Boolean)
 
   return (
-    <nav className="mb-6 mt-3 md:mt-0 flex items-center text-sm text-primary/50 space-x-2">
+    <nav className="mb-6 mt-3 flex items-center space-x-2 text-sm text-primary/50 md:mt-0">
       <Link className="hover:underline" href="/">
         home
       </Link>

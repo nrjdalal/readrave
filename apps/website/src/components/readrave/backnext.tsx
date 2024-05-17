@@ -24,10 +24,10 @@ export const ReadraveBacknext = ({
   const next = (filteredSidebarConfig[indexOfHref + 1] || null) as any
 
   return (
-    <nav className="grid md:grid-cols-2 gap-4 mt-10 border-t py-10 flex-wrap">
+    <nav className="mt-10 grid flex-wrap gap-4 border-t py-10 md:grid-cols-2">
       {previous ? (
         <Link
-          className="flex items-center gap-x-3 font-medium text-primary/75 hover:underline hover:text-primary justify-start border py-3 md:py-6 px-3 rounded-md bg-background"
+          className="flex select-none items-center justify-start gap-x-3 rounded-md border bg-background px-3 py-3 font-medium text-primary/75 hover:text-primary hover:underline md:py-6"
           href={previous.href}
         >
           <svg
@@ -51,7 +51,7 @@ export const ReadraveBacknext = ({
       )}
       {next ? (
         <Link
-          className="flex items-center gap-x-3 font-medium text-primary/75 hover:underline hover:text-primary justify-end border py-3 md:py-6 px-3 rounded-md bg-background"
+          className="flex select-none items-center justify-end gap-x-3 rounded-md border bg-background px-3 py-3 font-medium text-primary/75 hover:text-primary hover:underline md:py-6"
           href={next.href}
         >
           {next.title}
