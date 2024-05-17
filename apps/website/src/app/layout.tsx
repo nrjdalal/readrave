@@ -39,7 +39,7 @@ export default function RootLayout({
         <nav className="h-14 fixed top-0 z-50 bg-background border-b w-full">
           <div className="mx-auto max-w-screen-xl px-5 flex justify-between items-center h-full lg:px-7">
             <Link href="/" className="font-bold text-primary text-2xl">
-              Readrave
+              readrave
             </Link>
             <div className="flex items-center gap-8 text-primary">
               <div className="mt-0.5 flex items-center gap-4">
