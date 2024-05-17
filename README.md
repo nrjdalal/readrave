@@ -4,4 +4,4 @@ This is a simple tool to generate documentation from your code. It is designed t
 
 # Non-final Demo
 
-[DEMO LINK](https://readrave.vercel.app/) - This preview was done for testing purposes, it is not the final version. The final version will be amazing and will have a lot of features.
+[DEMO LINK](https://readrave.com) - This preview was done for testing purposes, it is not the final version. The final version will be amazing and will have a lot of features.
