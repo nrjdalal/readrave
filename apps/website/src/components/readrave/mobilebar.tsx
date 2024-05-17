@@ -60,7 +60,7 @@ export const ReadraveMobilebar = ({
                   <Link
                     href={item.href}
                     className={cn(
-                      'font-foreground/50 hover:text-primary hover:underline flex items-center gap-x-2',
+                      'font-foreground/50 hover:text-primary hover:underline',
                       pathname === item.href && 'text-primary',
                     )}
                     style={item.css}
@@ -70,7 +70,7 @@ export const ReadraveMobilebar = ({
                       className={cn(
                         'hidden',
                         pathname === item.href &&
-                          'inline-block w-2 h-2 rounded-full bg-green-600',
+                          'inline-block w-2 h-2 rounded-full bg-green-600 mr-1.5 mb-px dark:bg-green-500',
                       )}
                     />
                     {item.title}
