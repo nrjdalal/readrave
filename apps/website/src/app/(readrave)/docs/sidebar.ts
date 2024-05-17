@@ -7,7 +7,11 @@ export const sidebarConfig = [
     "href": "/docs"
   },
   {
-    "title": "Installation",
-    "href": "/docs/installation"
+    "title": "Manual Installation",
+    "href": "/docs/installation/manual"
+  },
+  {
+    "title": "Automatic Installation",
+    "href": "/docs/installation/automatic"
   }
 ]

@@ -1,5 +1,6 @@
 // version: 1.0
 
+import { ReadraveBacknext } from '@/components/readrave/backnext'
 import { ReadraveBreadcrumb } from '@/components/readrave/breadcrumb'
 import { ReadraveMobilebar } from '@/components/readrave/mobilebar'
 import { ReadraveSidebar } from '@/components/readrave/sidebar'
@@ -15,6 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <article className="prose max-w-none dark:prose-invert break-words">
           {children}
         </article>
+        <ReadraveBacknext sidebarConfig={sidebarConfig} />
       </main>
     </div>
   )
