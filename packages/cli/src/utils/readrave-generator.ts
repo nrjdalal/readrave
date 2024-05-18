@@ -88,7 +88,7 @@ export const readraveGenerator = async ({
       'utf8',
     )
 
-    logger.success('-  sample .readrave/docs.sidebar.yaml!')
+    logger.success('-  sample .readrave/docs.sidebar.yaml added')
   }
 
   SIDEBAR_FILES = await FastGlob.glob(cwd + '/.readrave/**/*.sidebar.yaml')
@@ -113,7 +113,7 @@ export const readraveGenerator = async ({
         'utf8',
       )
 
-      logger.success(`-  generated app/(readrave)${dirname}/layout.tsx`)
+      logger.success(`-  sample app/(readrave)${dirname}/layout.tsx added`)
     }
 
     const content = YAML.parse(await fs.readFile(file, 'utf8'))
@@ -158,4 +158,6 @@ export const readraveGenerator = async ({
       }
     })
   })
+
+  logger.break()
 }
