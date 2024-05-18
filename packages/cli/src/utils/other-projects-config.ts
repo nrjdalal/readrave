@@ -3,17 +3,12 @@ import path from 'path'
 import { execa } from 'execa'
 
 export const otherProjectsConfig = async (cwd: string) => {
-  const tasks = [
-    await execa('bunx', ['shadcn-ui', 'init', '-d'], {
-      cwd,
-    }),
-    await execa('bunx', ['shadcn-ui', 'add', 'scroll-area', 'sheet', '-o'], {
-      cwd,
-    }),
-    await execa('bun', ['add', '-D', '@tailwindcss/typography'], {
-      cwd,
-    }),
-  ]
+  await execa('bunx', ['shadcn-ui', 'init', '-d'], {
+    cwd,
+  })
+  await execa('bun', ['add', '-D', '@tailwindcss/typography'], {
+    cwd,
+  })
 
   const tailwindPlugins = await fs.readFile(
     path.join(cwd, 'tailwind.config.ts'),
