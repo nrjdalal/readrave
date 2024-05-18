@@ -55,7 +55,7 @@ export const readraveGenerator = async ({
     )
 
     await fs.writeFile(
-      path.join(cwd, nextInfo.appDir, 'navbar.tsx'),
+      path.join(cwd, nextInfo.appDir, '(readrave)/navbar.ts'),
       `export const navbarConfig = ${JSON.stringify(content, null, 2)}`,
       'utf8',
     )
@@ -64,12 +64,12 @@ export const readraveGenerator = async ({
 
     logger.info('Add the following import to layout.tsx to use the navbar:')
     logger.warn(
-      `import { navbarConfig } from '@/app/(readrave)/navbar'\n`,
+      `import { navbarConfig } from '@/app/(readrave)/navbar'`,
       `import { ReadraveNavbar } from '@/components/readrave/navbar'\n`,
     )
 
     logger.info(
-      'Add the following code to layout.tsx <body> tag to use the navbar:',
+      `Add the following code inside ${nextInfo.appDir}/layout.tsx's <body>...</body> tag to use the navbar:`,
     )
     logger.warn(`<ReadraveNavbar navbarConfig={navbarConfig} />`)
   }
