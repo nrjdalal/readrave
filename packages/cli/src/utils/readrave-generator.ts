@@ -14,46 +14,36 @@ export const readraveGenerator = async ({
   cwd: string
   nextInfo: any
 }) => {
-  const sidebarComponent = existsSync(
-    path.join(cwd, nextInfo.appDir, '..', 'components/readrave/sidebar.tsx'),
+  // ~ default components generator
+  const components = [
+    'breadcrumb.tsx',
+    'backnext.tsx',
+    'sidebar.tsx',
+    'scroll-area.tsx',
+    'sheet.tsx',
+  ]
+
+  const componentsPath = path.join(
+    cwd,
+    nextInfo.appDir,
+    '..',
+    'components/readrave',
   )
 
-  const mobilebarComponent = existsSync(
-    path.join(cwd, nextInfo.appDir, '..', 'components/readrave/mobilebar.tsx'),
-  )
-
-  if (!sidebarComponent) {
-    await fsex.ensureFile(
-      path.join(cwd, nextInfo.appDir, '..', 'components/readrave/sidebar.tsx'),
-    )
-    await fs.writeFile(
-      path.join(cwd, nextInfo.appDir, '..', 'components/readrave/sidebar.tsx'),
-      templates.DEMO_SIDEBAR,
-      'utf8',
-    )
+  for (const component of components) {
+    if (!existsSync(path.join(componentsPath, component))) {
+      await fsex.ensureFile(path.join(componentsPath, component))
+      await fs.writeFile(
+        path.join(componentsPath, component),
+        await fetch(
+          `https://raw.githubusercontent.com/nrjdalal/readrave/main/apps/website/src/components/readrave/${component}`,
+        ).then((res) => res.text()),
+        'utf8',
+      )
+    }
   }
 
-  if (!mobilebarComponent) {
-    await fsex.ensureFile(
-      path.join(
-        cwd,
-        nextInfo.appDir,
-        '..',
-        'components/readrave/mobilebar.tsx',
-      ),
-    )
-    await fs.writeFile(
-      path.join(
-        cwd,
-        nextInfo.appDir,
-        '..',
-        'components/readrave/mobilebar.tsx',
-      ),
-      templates.DEMO_MOBILEBAR,
-      'utf8',
-    )
-  }
-
+  // ~ file generator from .readrave/configs
   let SIDEBAR_FILES = await FastGlob.glob(cwd + '/.readrave/**/*.sidebar.yaml')
 
   if (!SIDEBAR_FILES.length) {
@@ -79,7 +69,13 @@ export const readraveGenerator = async ({
 
     if (!existsSync(layoutpath)) {
       await fsex.ensureFile(layoutpath)
-      await fs.writeFile(layoutpath, templates.DEMO_LAYOUT_TSX, 'utf8')
+      await fs.writeFile(
+        layoutpath,
+        await fetch(
+          `https://raw.githubusercontent.com/nrjdalal/readrave/main/apps/website/src/app/(readrave)/docs/layout.tsx`,
+        ).then((res) => res.text()),
+        'utf8',
+      )
     }
 
     const content = YAML.parse(await fs.readFile(file, 'utf8'))

@@ -2,8 +2,8 @@
 
 'use client'
 
-import { ScrollArea } from '@/components/ui/scroll-area'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { ScrollArea } from '@/components/readrave/scroll-area'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/readrave/sheet'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
