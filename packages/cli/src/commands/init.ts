@@ -47,13 +47,15 @@ export const init = new Command()
         '@mdx-js/loader',
         '@mdx-js/react',
         '@next/mdx',
-        '@radix-ui/react-dialog',
-        '@radix-ui/react-scroll-area',
         '@types/mdx',
         'rehype-pretty-code',
         'rehype-slug',
         'remark-gfm',
         'unist-util-visit',
+
+        '@radix-ui/react-dialog',
+        '@radix-ui/react-icons',
+        '@radix-ui/react-scroll-area',
       ]
 
       const manager = await detect({
