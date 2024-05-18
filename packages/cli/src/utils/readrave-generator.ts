@@ -18,6 +18,7 @@ export const readraveGenerator = async ({
   const components = [
     'breadcrumb.tsx',
     'backnext.tsx',
+    'navbar.tsx',
     'sidebar.tsx',
     'scroll-area.tsx',
     'sheet.tsx',
@@ -44,6 +45,32 @@ export const readraveGenerator = async ({
   }
 
   // ~ file generator from .readrave/configs
+  const NAVBAR_FILE = path.join(cwd, '.readrave/navbar.yaml')
+
+  if (existsSync(NAVBAR_FILE)) {
+    const content = YAML.parse(await fs.readFile(NAVBAR_FILE, 'utf8'))
+
+    await fsex.ensureFile(path.join(cwd, nextInfo.appDir, 'navbar.tsx'))
+
+    await fs.writeFile(
+      path.join(cwd, nextInfo.appDir, 'navbar.tsx'),
+      `export const navbarConfig = ${JSON.stringify(content, null, 2)}`,
+      'utf8',
+    )
+
+    logger.success('Generated navbar.tsx!')
+
+    logger.info(
+      'Add the following import to layout.tsx to use the navbar:',
+      `import { ReadraveNavbar } from '@/components/readrave/navbar'`,
+    )
+
+    logger.info(
+      'Add the following code to layout.tsx <body> tag to use the navbar:',
+      `<ReadraveNavbar navbarConfig={navbarConfig} />`,
+    )
+  }
+
   let SIDEBAR_FILES = await FastGlob.glob(cwd + '/.readrave/**/*.sidebar.yaml')
 
   if (!SIDEBAR_FILES.length) {
@@ -90,8 +117,6 @@ export const readraveGenerator = async ({
       'utf8',
     )
 
-    logger.info(`\nGenerating pages for ${dirname} ...`)
-
     let count = 0
 
     content.forEach(async (element: any) => {
@@ -114,7 +139,7 @@ export const readraveGenerator = async ({
           )
 
           logger.success(
-            `${++count}. Generated https://localhost:3000${element.href} for ${element.title}!`,
+            `${++count}. Generated http://localhost:3000${element.href} for ${element.title}!`,
           )
         }
       }

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { title } from 'process'
 import { ReadraveNavbar } from '@/components/readrave/navbar'
 import { cn } from '@/lib/utils'
 import { JetBrains_Mono as FontMono, Inter as FontSans } from 'next/font/google'
