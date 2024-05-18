@@ -113,7 +113,7 @@ export const readraveGenerator = async ({
         'utf8',
       )
 
-      logger.success(`-   generated app/(readrave)${dirname}/layout.tsx`)
+      logger.success(`-  generated app/(readrave)${dirname}/layout.tsx`)
     }
 
     const content = YAML.parse(await fs.readFile(file, 'utf8'))
@@ -129,6 +129,8 @@ export const readraveGenerator = async ({
     )
 
     let count = 0
+
+    logger.break()
 
     content.forEach(async (element: any) => {
       if (element.title && element.href?.startsWith(dirname)) {
@@ -149,7 +151,7 @@ export const readraveGenerator = async ({
             'utf8',
           )
 
-          logger.success(
+          logger.info(
             `${++count}. generated app/(readrave)${element.href}/page.mdx`,
           )
         }
