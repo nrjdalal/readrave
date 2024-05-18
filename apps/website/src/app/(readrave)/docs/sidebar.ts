@@ -1,17 +1,17 @@
 export const sidebarConfig = [
   {
-    title: 'Getting Started',
+    "title": "Getting Started"
   },
   {
-    title: 'Introduction',
-    href: '/docs',
+    "title": "Introduction",
+    "href": "/docs"
   },
   {
-    title: 'Manual Installation',
-    href: '/docs/installation/manual',
+    "title": "Manual Installation",
+    "href": "/docs/installation/manual"
   },
   {
-    title: 'Automatic Installation',
-    href: '/docs/installation/automatic',
-  },
+    "title": "Automatic Installation",
+    "href": "/docs/installation/automatic"
+  }
 ]

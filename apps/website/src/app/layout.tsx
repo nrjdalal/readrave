@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { navbarConfig } from '@/app/(readrave)/docs/navbar'
 import { ReadraveNavbar } from '@/components/readrave/navbar'
 import { cn } from '@/lib/utils'
 import { JetBrains_Mono as FontMono, Inter as FontSans } from 'next/font/google'
@@ -33,17 +34,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <ReadraveNavbar
-          navbarConfig={{
-            title: 'Test App',
-            links: [
-              { title: 'Home', href: '/' },
-              { title: 'About', href: '/about' },
-              { title: 'Contact', href: '/contact' },
-            ],
-            socials: { title: 'github' },
-          }}
-        />
+        <ReadraveNavbar navbarConfig={navbarConfig} />
         {children}
       </body>
     </html>

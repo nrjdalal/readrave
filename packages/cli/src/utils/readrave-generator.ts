@@ -50,7 +50,9 @@ export const readraveGenerator = async ({
   if (existsSync(NAVBAR_FILE)) {
     const content = YAML.parse(await fs.readFile(NAVBAR_FILE, 'utf8'))
 
-    await fsex.ensureFile(path.join(cwd, nextInfo.appDir, 'navbar.tsx'))
+    await fsex.ensureFile(
+      path.join(cwd, nextInfo.appDir, '(readrave)/navbar.ts'),
+    )
 
     await fs.writeFile(
       path.join(cwd, nextInfo.appDir, 'navbar.tsx'),
@@ -60,15 +62,16 @@ export const readraveGenerator = async ({
 
     logger.success('Generated navbar.tsx!')
 
-    logger.info(
-      'Add the following import to layout.tsx to use the navbar:',
-      `import { ReadraveNavbar } from '@/components/readrave/navbar'`,
+    logger.info('Add the following import to layout.tsx to use the navbar:')
+    logger.warn(
+      `import { navbarConfig } from '@/app/(readrave)/navbar'\n`,
+      `import { ReadraveNavbar } from '@/components/readrave/navbar'\n`,
     )
 
     logger.info(
       'Add the following code to layout.tsx <body> tag to use the navbar:',
-      `<ReadraveNavbar navbarConfig={navbarConfig} />`,
     )
+    logger.warn(`<ReadraveNavbar navbarConfig={navbarConfig} />`)
   }
 
   let SIDEBAR_FILES = await FastGlob.glob(cwd + '/.readrave/**/*.sidebar.yaml')
