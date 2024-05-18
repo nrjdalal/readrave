@@ -158,6 +158,4 @@ export const readraveGenerator = async ({
       }
     })
   })
-
-  logger.break()
 }
