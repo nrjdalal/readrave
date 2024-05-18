@@ -46,12 +46,12 @@ export const readraveGenerator = async ({
     }
   }
 
-  logger.break()
-
   // ~ file generator from .readrave/configs
   const NAVBAR_FILE = path.join(cwd, '.readrave/navbar.yaml')
 
   if (existsSync(NAVBAR_FILE)) {
+    logger.break()
+
     const content = YAML.parse(await fs.readFile(NAVBAR_FILE, 'utf8'))
 
     await fsex.ensureFile(
@@ -81,6 +81,8 @@ export const readraveGenerator = async ({
   let SIDEBAR_FILES = await FastGlob.glob(cwd + '/.readrave/**/*.sidebar.yaml')
 
   if (!SIDEBAR_FILES.length) {
+    logger.break()
+
     await fsex.ensureFile(path.join(cwd, '.readrave/docs.sidebar.yaml'))
     await fs.writeFile(
       path.join(cwd, '.readrave/docs.sidebar.yaml'),
@@ -88,7 +90,7 @@ export const readraveGenerator = async ({
       'utf8',
     )
 
-    logger.success('-  sample .readrave/docs.sidebar.yaml added')
+    logger.success('[[ Generating files via .readrave/docs.sidebar.yaml ]]')
   }
 
   SIDEBAR_FILES = await FastGlob.glob(cwd + '/.readrave/**/*.sidebar.yaml')
@@ -112,8 +114,6 @@ export const readraveGenerator = async ({
         ).then((res) => res.text()),
         'utf8',
       )
-
-      logger.success(`-  sample app/(readrave)${dirname}/layout.tsx added`)
     }
 
     const content = YAML.parse(await fs.readFile(file, 'utf8'))
@@ -130,7 +130,9 @@ export const readraveGenerator = async ({
 
     let count = 0
 
-    logger.break()
+    if (content.length) {
+      logger.break()
+    }
 
     content.forEach(async (element: any, index: number) => {
       if (element.title && element.href?.startsWith(dirname)) {
@@ -157,10 +159,12 @@ export const readraveGenerator = async ({
         }
       }
 
-      console.log(index, content.length)
-
-      if (index === content.length) {
+      if (index === content.length - 1) {
         logger.break()
+
+        logger.success(
+          `Generated ${count} pages, layout & sidebar for app/(readrave)${dirname}`,
+        )
       }
     })
   })
