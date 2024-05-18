@@ -5,6 +5,8 @@ import { logger } from './logger'
 import * as templates from './templates'
 
 export const writeFiles = async ({ cwd, nextInfo }) => {
+  logger.break()
+
   await fs.writeFile(
     path.join(cwd, 'next.config.mjs'),
     templates.NEXT_CONFIG_MJS,
@@ -46,5 +48,6 @@ export const writeFiles = async ({ cwd, nextInfo }) => {
     'utf8',
   )
   logger.success('-  lib/utils.ts added')
+
   logger.break()
 }
