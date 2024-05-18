@@ -24,7 +24,7 @@ export const ReadraveBacknext = ({
   const next = (filteredSidebarConfig[indexOfHref + 1] || null) as any
 
   return (
-    <nav className="mt-10 grid flex-wrap gap-4 border-t py-10 md:grid-cols-2">
+    <nav className="mt-10 grid flex-wrap gap-4 border-t py-12 md:grid-cols-2">
       {previous ? (
         <Link
           className="flex select-none items-center justify-start gap-x-3 rounded-md border bg-background px-3 py-3 font-medium text-primary/75 hover:text-primary hover:underline md:py-6"

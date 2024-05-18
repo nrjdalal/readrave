@@ -1,6 +1,6 @@
 {
   "name": "readrave",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "main": "index.js",
   "type": "module",
   "exports": "./dist/index.js",
@@ -17,20 +17,17 @@
   "dependencies": {
     "chalk": "^5.3.0",
     "commander": "^12.0.0",
-    "cosmiconfig": "^9.0.0",
     "detect-package-manager": "^3.0.2",
     "execa": "^9.1.0",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "ora": "^8.0.1",
-    "traverse": "^0.6.9",
     "tsup": "^8.0.2",
     "yaml": "^2.4.2",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/traverse": "^0.6.36",
     "typescript": "^5.4.5"
   }
 }

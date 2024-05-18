@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { navbarConfig } from '@/app/(readrave)/docs/navbar'
+import { navbarConfig } from '@/app/(readrave)/navbar'
 import { ReadraveNavbar } from '@/components/readrave/navbar'
 import { cn } from '@/lib/utils'
 import { JetBrains_Mono as FontMono, Inter as FontSans } from 'next/font/google'
