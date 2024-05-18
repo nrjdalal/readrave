@@ -14,4 +14,20 @@ export const writeFiles = async ({ cwd, nextInfo }) => {
     templates.MDX_COMPONENT_TSX,
     'utf8',
   )
+
+  await fs.writeFile(
+    path.join(cwd, 'tailwind.config.ts'),
+    await fetch(
+      `https://raw.githubusercontent.com/nrjdalal/readrave/main/apps/website/tailwind.config.ts`,
+    ).then((res) => res.text()),
+    'utf8',
+  )
+
+  await fs.writeFile(
+    path.join(cwd, nextInfo.appDir, 'globals.css'),
+    await fetch(
+      `https://raw.githubusercontent.com/nrjdalal/readrave/main/apps/website/src/app/globals.css`,
+    ).then((res) => res.text()),
+    'utf8',
+  )
 }

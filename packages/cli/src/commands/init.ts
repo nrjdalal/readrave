@@ -4,7 +4,6 @@ import {
   filesInCwd,
   getProjectInfo,
   handleError,
-  otherProjectsConfig,
   readraveGenerator,
   resolveDirectory,
   writeFiles,
@@ -38,7 +37,6 @@ export const init = new Command()
 
       let files = await filesInCwd(cwd)
       const nextInfo = getProjectInfo(files)
-      await otherProjectsConfig(cwd)
       await writeFiles({ cwd, nextInfo })
       await readraveGenerator({ cwd, nextInfo })
 
