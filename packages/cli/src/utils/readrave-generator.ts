@@ -41,8 +41,12 @@ export const readraveGenerator = async ({
         ).then((res) => res.text()),
         'utf8',
       )
+
+      logger.info(`-  added components/readrave/${component}`)
     }
   }
+
+  logger.break()
 
   // ~ file generator from .readrave/configs
   const NAVBAR_FILE = path.join(cwd, '.readrave/navbar.yaml')
@@ -142,7 +146,7 @@ export const readraveGenerator = async ({
           )
 
           logger.success(
-            `${++count}. Generated http://localhost:3000${element.href} for ${element.title}!`,
+            `${++count}. generated app/(readrave)${element.href}/page.mdx`,
           )
         }
       }

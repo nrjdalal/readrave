@@ -45,7 +45,6 @@ export const init = new Command()
         '@mdx-js/loader',
         '@mdx-js/react',
         '@next/mdx',
-        '@types/mdx',
         'rehype-pretty-code',
         'rehype-slug',
         'remark-gfm',
@@ -54,6 +53,17 @@ export const init = new Command()
         '@radix-ui/react-dialog',
         '@radix-ui/react-icons',
         '@radix-ui/react-scroll-area',
+
+        'class-variance-authority',
+        'clsx',
+        'tailwind-merge',
+      ]
+
+      const devDeps = [
+        '@types/mdx',
+
+        '@tailwindcss/typography',
+        'tailwindcss-animate',
       ]
 
       const manager = await detect({
@@ -63,6 +73,14 @@ export const init = new Command()
       await execa(manager, [manager === 'npm' ? 'install' : 'add', ...deps], {
         cwd,
       })
+
+      await execa(
+        manager,
+        [manager === 'npm' ? 'install' : 'add', '-D', ...devDeps],
+        {
+          cwd,
+        },
+      )
     } catch (error) {
       console.error(error)
       process.exit(1)
