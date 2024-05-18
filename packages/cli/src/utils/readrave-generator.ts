@@ -132,7 +132,7 @@ export const readraveGenerator = async ({
 
     logger.break()
 
-    content.forEach(async (element: any) => {
+    content.forEach(async (element: any, index: number) => {
       if (element.title && element.href?.startsWith(dirname)) {
         const filepath = path.join(
           cwd,
@@ -155,6 +155,10 @@ export const readraveGenerator = async ({
             `${++count}. generated app/(readrave)${element.href}/page.mdx`,
           )
         }
+      }
+
+      if (index === content.length) {
+        logger.break()
       }
     })
   })
