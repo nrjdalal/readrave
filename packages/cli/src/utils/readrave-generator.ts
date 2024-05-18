@@ -157,6 +157,8 @@ export const readraveGenerator = async ({
         }
       }
 
+      console.log(index, content.length)
+
       if (index === content.length) {
         logger.break()
       }
