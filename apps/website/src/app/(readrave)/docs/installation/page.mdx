@@ -14,7 +14,7 @@ export const metadata = {
 This project and the components are written in TypeScript. We recommend using TypeScript for your project as well.
 
 - We will add support for JavaScript in the future.
-- More granular control over the installation process will be added in the future.
+- More granular control over the installation process will also be added in the future.
 
 ### Installation
 
@@ -24,7 +24,7 @@ To bootstrap a project with Readrave, you can use the following command:
 bunx readrave@latest init
 ```
 
-The command only overwrites these files:
+The command overwrites these files:
 
 ```md
 - next.config.mjs
@@ -35,7 +35,7 @@ The command only overwrites these files:
 * lib/utils.ts
 ```
 
-The command will add the following files:
+The command adds these files:
 
 ```md
 # .readrave folder:
@@ -58,3 +58,15 @@ The command will add the following files:
 - sidebar.ts
 - installation/page.mdx
 ```
+
+### Usage
+
+Just run the following command to start the development server:
+
+```bash
+bun run dev
+```
+
+Now when you visit `http://localhost:3000/docs`, you should see the documentation with demo pages.
+
+These demo pages include sidebar, breadcrumb, previous and next buttons, and are mobile responsive.
