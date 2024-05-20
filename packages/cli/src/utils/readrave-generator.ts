@@ -149,7 +149,18 @@ export const readraveGenerator = async ({
 
           await fs.writeFile(
             filepath,
-            `# ${element.title}\n\n${templates.DEMO_MDX}`,
+            `export const metadata = {
+  title: \`${element.title}\`,
+  description: 'Add description for the page here!',
+}
+
+# {metadata.title}
+
+{metadata.description}
+
+---
+
+${templates.DEMO_MDX}`,
             'utf8',
           )
 

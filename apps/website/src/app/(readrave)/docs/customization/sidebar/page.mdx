@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 # Sidebar
 
 ---
@@ -21,3 +23,43 @@ Say this is your sidebar file:
 - title: Installation
   href: /docs/installation
 ```
+
+Run the following command to generate the sidebar, or whenever you make changes to the sidebar configuration file:
+
+```bash
+bunx readrave@latest sync
+```
+
+This will generate the following sidebar for the documentation:
+
+<div className="not-prose flex flex-col space-y-2.5 py-12 text-sm text-foreground/50">
+  <p className="select-none font-semibold text-primary">Getting Started</p>
+  <Link
+    className="font-foreground/50 hover:text-primary hover:underline"
+    href={'/docs'}
+  >
+    Introduction
+  </Link>
+  <Link
+    className="font-foreground/50 hover:text-primary hover:underline"
+    href={'/docs/installation'}
+  >
+    Installation
+  </Link>
+</div>
+
+As you can see, the sidebar is generated based on the configuration provided in the sidebar file.
+
+- When no `href` is provided, the title is used as a heading and is semibold by default.
+
+You can additionally add the following properties to the sidebar configuration:
+
+```yaml
+- title: Introduction
+  href: /docs
+  css:
+    fontWeight: 400
+    # ... Add any other CSS property here
+```
+
+Run `bunx readrave@latest sync` to generate the sidebar with the updated configuration.
